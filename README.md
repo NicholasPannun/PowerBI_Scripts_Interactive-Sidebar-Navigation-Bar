@@ -2,6 +2,9 @@
 
 This guide explains how to integrate an **interactive sidebar and top navigation bar** into Power BI using an **HTML Content Visualization** with hosted JavaScript and CSS files. The approach ensures full interactivity and responsiveness.  
 
+![Side-Navigation-Bar-in-HTML-CSS-and-JavaScript](https://github.com/user-attachments/assets/4cc43a6f-7a05-4ca7-8b96-10ebda279da1)
+
+
 ---
 
 ## **🛠️ Step 1: Prepare Your HTML, CSS, and JavaScript Files**  
