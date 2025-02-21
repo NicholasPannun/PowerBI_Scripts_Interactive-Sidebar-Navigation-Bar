@@ -42,11 +42,13 @@ Since Power BI does not allow direct script execution, you must **host your Java
 1. Go to **Settings** in your repository.  
 2. Click **Pages** in the left sidebar.  
 3. Under **Branch**, select `main` and click **Save**.  
-4. GitHub will generate a link for your hosted files:  
+4. Within the section at the top, there should be a section where it says **Your site is live at** and GitHub will generate a link for your hosted files:  
    ```
    https://YOUR_GITHUB_USERNAME.github.io/PowerBI_Scripts/
    ```
    (For you, it’s **`https://nicholaspannun.github.io/PowerBI_Scripts_Interactive-Sidebar-Navigation-Bar/`**)
+
+4. Click on the link to access the **Live Preview** to verify if everything is working correctly.  
 
 ---
 
