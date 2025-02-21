@@ -5,6 +5,7 @@ const submenuItems = document.querySelectorAll(".submenu_item");
 const sidebarOpen = document.querySelector("#sidebarOpen");
 const sidebarClose = document.querySelector(".collapse_sidebar");
 const sidebarExpand = document.querySelector(".expand_sidebar");
+
 sidebarOpen.addEventListener("click", () => sidebar.classList.toggle("close"));
 
 sidebarClose.addEventListener("click", () => {
@@ -28,7 +29,6 @@ sidebar.addEventListener("mouseleave", () => {
 darkLight.addEventListener("click", () => {
   body.classList.toggle("dark");
   if (body.classList.contains("dark")) {
-    document.setI;
     darkLight.classList.replace("bx-sun", "bx-moon");
   } else {
     darkLight.classList.replace("bx-moon", "bx-sun");
@@ -51,3 +51,21 @@ if (window.innerWidth < 768) {
 } else {
   sidebar.classList.remove("close");
 }
+
+// 📌 POWER BI PAGE NAVIGATION FUNCTIONALITY
+document.querySelectorAll(".sidebar a").forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        let pageName = this.getAttribute("data-page"); // Get the target page name
+
+        // Send message to Power BI to navigate
+        window.parent.postMessage(
+            {
+                type: "navigate",
+                pageName: pageName
+            },
+            "*"
+        );
+    });
+});
