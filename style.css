@@ -13,11 +13,11 @@
   --grey-color-light: #aaa;
 }
 body {
-  background-color: #e7f2fd;
+  background-color: transparent; /* Transparent background */
   transition: all 0.5s ease;
 }
 body.dark {
-  background-color: #333;
+  background-color: transparent; /* Transparent background */
 }
 body.dark {
   --white-color: #333;
