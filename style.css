@@ -55,7 +55,6 @@ body.dark {
   color: var(--blue-color);
 }
 
-/* Any <img> inside .navbar */
 .navbar img {
   width: 35px;
   height: 35px;
@@ -306,11 +305,9 @@ body.dark {
   }
 }
 
-/* 🛑 Hide top-bar logo and icons */
-.logo_item > img,
-.logo_item > .logo_name,
-.logo_item > a,
-.navbar_content > .bx.bx-bell,
-.navbar_content > img {
+/* 🛑 Hide top-bar brand, bell & profile */
+.logo_item,
+.navbar_content .bx.bx-bell,
+.navbar_content img {
   display: none !important;
 }
