@@ -1,24 +1,29 @@
 /* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 :root {
   --white-color: #fff;
   --blue-color: #4070f4;
   --grey-color: #707070;
   --grey-color-light: #aaa;
 }
+
 body {
   background-color: transparent; /* Transparent background */
   transition: all 0.5s ease;
 }
+
 body.dark {
   background-color: transparent; /* Transparent background */
 }
+
 body.dark {
   --white-color: #333;
   --blue-color: #fff;
@@ -40,6 +45,7 @@ body.dark {
   z-index: 1000;
   box-shadow: 0 0 2px var(--grey-color-light);
 }
+
 .logo_item {
   display: flex;
   align-items: center;
@@ -48,17 +54,20 @@ body.dark {
   font-weight: 500;
   color: var(--blue-color);
 }
+
 .navbar img {
   width: 35px;
   height: 35px;
   object-fit: cover;
   border-radius: 50%;
 }
+
 .search_bar {
   height: 47px;
   max-width: 430px;
   width: 100%;
 }
+
 .search_bar input {
   height: 100%;
   width: 100%;
@@ -70,11 +79,13 @@ body.dark {
   border: 1px solid var(--grey-color-light);
   padding: 0 20px;
 }
+
 .navbar_content {
   display: flex;
   align-items: center;
   column-gap: 25px;
 }
+
 .navbar_content i {
   cursor: pointer;
   font-size: 20px;
@@ -95,37 +106,47 @@ body.dark {
   box-shadow: 0 0 1px var(--grey-color-light);
   transition: all 0.5s ease;
 }
+
 .sidebar.close {
   padding: 60px 0;
   width: 80px;
 }
+
 .sidebar::-webkit-scrollbar {
   display: none;
 }
+
 .menu_content {
   position: relative;
 }
+
 .menu_title {
   margin: 15px 0;
   padding: 0 20px;
   font-size: 18px;
 }
+
 .sidebar.close .menu_title {
   padding: 6px 30px;
 }
+
 .menu_title::before {
   color: var(--grey-color);
   white-space: nowrap;
 }
+
 .menu_dahsboard::before {
   content: "Dashboard";
 }
+
 .menu_editor::before {
   content: "Editor";
 }
+
 .menu_setting::before {
   content: "Setting";
 }
+
 .sidebar.close .menu_title::before {
   content: "";
   position: absolute;
@@ -134,10 +155,12 @@ body.dark {
   border-radius: 12px;
   background: var(--grey-color-light);
 }
+
 .menu_items {
   padding: 0;
   list-style: none;
 }
+
 .navlink_icon {
   position: relative;
   font-size: 22px;
@@ -147,6 +170,7 @@ body.dark {
   text-align: center;
   border-radius: 6px;
 }
+
 .navlink_icon::before {
   content: "";
   position: absolute;
@@ -154,9 +178,11 @@ body.dark {
   width: calc(100% + 100px);
   left: -20px;
 }
+
 .navlink_icon:hover {
   background: var(--blue-color);
 }
+
 .sidebar .nav_link {
   display: flex;
   align-items: center;
@@ -167,40 +193,51 @@ body.dark {
   color: var(--grey-color);
   white-space: nowrap;
 }
+
 .sidebar.close .navlink {
   display: none;
 }
+
 .nav_link:hover {
   color: var(--white-color);
   background: var(--blue-color);
 }
+
 .sidebar.close .nav_link:hover {
   background: var(--white-color);
 }
+
 .submenu_item {
   cursor: pointer;
 }
+
 .submenu {
   display: none;
 }
+
 .submenu_item .arrow-left {
   position: absolute;
   right: 10px;
   display: inline-block;
   margin-right: auto;
 }
+
 .sidebar.close .submenu {
   display: none;
 }
+
 .show_submenu ~ .submenu {
   display: block;
 }
+
 .show_submenu .arrow-left {
   transform: rotate(90deg);
 }
+
 .submenu .sublink {
   padding: 15px 15px 15px 52px;
 }
+
 .bottom_content {
   position: fixed;
   bottom: 60px;
@@ -209,6 +246,7 @@ body.dark {
   cursor: pointer;
   transition: all 0.5s ease;
 }
+
 .bottom {
   position: absolute;
   display: flex;
@@ -222,25 +260,32 @@ body.dark {
   border-top: 1px solid var(--grey-color-light);
   background-color: var(--white-color);
 }
+
 .bottom i {
   font-size: 20px;
 }
+
 .bottom span {
   font-size: 18px;
 }
+
 .sidebar.close .bottom_content {
   width: 50px;
   left: 15px;
 }
+
 .sidebar.close .bottom span {
   display: none;
 }
+
 .sidebar.hoverable .collapse_sidebar {
   display: none;
 }
+
 #sidebarOpen {
   display: none;
 }
+
 @media screen and (max-width: 768px) {
   #sidebarOpen {
     font-size: 25px;
@@ -258,4 +303,11 @@ body.dark {
   .sidebar.close .bottom_content {
     left: -100%;
   }
+}
+
+/* 🛑 Hide logo, bell and profile in top bar */
+.company-logo,
+.notification-icon,
+.profile-icon {
+  display: none !important;
 }
