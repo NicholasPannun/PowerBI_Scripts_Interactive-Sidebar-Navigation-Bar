@@ -1,11 +1,6 @@
-/* ----------------------------------------------
-   1) Import Poppins font
------------------------------------------------ */
+/* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-/* ----------------------------------------------
-   2) Global resets & variables
------------------------------------------------ */
 * {
   margin: 0;
   padding: 0;
@@ -21,12 +16,12 @@
 }
 
 body {
-  background-color: transparent; /* Transparent so it layers under HTML Content in Power BI */
+  background-color: transparent; /* Transparent background */
   transition: all 0.5s ease;
 }
 
 body.dark {
-  background-color: transparent;
+  background-color: transparent; /* Transparent background */
 }
 
 body.dark {
@@ -36,14 +31,12 @@ body.dark {
   --grey-color-light: #aaa;
 }
 
-/* ----------------------------------------------
-   3) NAVBAR STYLES
------------------------------------------------ */
+/* navbar */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
+  left: 0;
   background-color: var(--white-color);
   display: flex;
   align-items: center;
@@ -53,14 +46,6 @@ body.dark {
   box-shadow: 0 0 2px var(--grey-color-light);
 }
 
-#sidebarOpen {
-  font-size: 25px;
-  cursor: pointer;
-  color: var(--grey-color);
-  display: none; /* hidden by default, shown on mobile */
-}
-
-/* Logo + site name */
 .logo_item {
   display: flex;
   align-items: center;
@@ -70,7 +55,6 @@ body.dark {
   color: var(--blue-color);
 }
 
-/* Logo <img> inside navbar */
 .navbar img {
   width: 35px;
   height: 35px;
@@ -78,12 +62,12 @@ body.dark {
   border-radius: 50%;
 }
 
-/* Search box */
 .search_bar {
   height: 47px;
   max-width: 430px;
   width: 100%;
 }
+
 .search_bar input {
   height: 100%;
   width: 100%;
@@ -96,21 +80,19 @@ body.dark {
   padding: 0 20px;
 }
 
-/* Right-hand icons in navbar */
 .navbar_content {
   display: flex;
   align-items: center;
   column-gap: 25px;
 }
+
 .navbar_content i {
   cursor: pointer;
   font-size: 20px;
   color: var(--grey-color);
 }
 
-/* ----------------------------------------------
-   4) SIDEBAR STYLES
------------------------------------------------ */
+/* sidebar */
 .sidebar {
   background-color: var(--white-color);
   width: 260px;
@@ -118,45 +100,53 @@ body.dark {
   top: 0;
   left: 0;
   height: 100%;
-  padding: 80px 20px; /* space for navbar above */
+  padding: 80px 20px;
   z-index: 100;
-  overflow-y: scroll;      /* allows scrolling when many items */
+  overflow-y: scroll;
   box-shadow: 0 0 1px var(--grey-color-light);
   transition: all 0.5s ease;
 }
 
-/* When collapsed, sidebar shrinks to 80px width */
 .sidebar.close {
   padding: 60px 0;
   width: 80px;
 }
 
-/* Hide scrollbar in WebKit browsers */
 .sidebar::-webkit-scrollbar {
   display: none;
 }
 
-/* Menu section titles (Dashboard / Report Navigation / Setting) */
+.menu_content {
+  position: relative;
+}
+
 .menu_title {
   margin: 15px 0;
   padding: 0 20px;
   font-size: 18px;
-  color: var(--grey-color);
 }
 
-/* “Dashboard” heading text via pseudo-element */
+.sidebar.close .menu_title {
+  padding: 6px 30px;
+}
+
+.menu_title::before {
+  color: var(--grey-color);
+  white-space: nowrap;
+}
+
 .menu_dahsboard::before {
   content: "Dashboard";
 }
 
-/* “Editor” was renamed to “Report Navigation” via CSS override below */
-
-/* “Setting” is removed from HTML, so we don’t need a ::before for it */
-
-/* When sidebar is collapsed, remove text of menu_title */
-.sidebar.close .menu_title {
-  padding: 6px 30px;
+.menu_editor::before {
+  content: "Editor";
 }
+
+.menu_setting::before {
+  content: "Setting";
+}
+
 .sidebar.close .menu_title::before {
   content: "";
   position: absolute;
@@ -166,12 +156,9 @@ body.dark {
   background: var(--grey-color-light);
 }
 
-/* ----------------------------------------------
-   5) MENU ITEMS STYLES
------------------------------------------------ */
 .menu_items {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
 .navlink_icon {
@@ -183,11 +170,20 @@ body.dark {
   text-align: center;
   border-radius: 6px;
 }
+
+.navlink_icon::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: calc(100% + 100px);
+  left: -20px;
+}
+
 .navlink_icon:hover {
   background: var(--blue-color);
 }
 
-.nav_link {
+.sidebar .nav_link {
   display: flex;
   align-items: center;
   width: 100%;
@@ -197,34 +193,51 @@ body.dark {
   color: var(--grey-color);
   white-space: nowrap;
 }
+
+.sidebar.close .navlink {
+  display: none;
+}
+
 .nav_link:hover {
   color: var(--white-color);
   background: var(--blue-color);
 }
 
-/* Hide link text when sidebar is collapsed */
-.sidebar.close .navlink .nav_link span {
-  display: none;
+.sidebar.close .nav_link:hover {
+  background: var(--white-color);
 }
 
-/* Submenus (not used in this example, but kept for reference) */
+.submenu_item {
+  cursor: pointer;
+}
+
 .submenu {
   display: none;
 }
-.show_submenu ~ .submenu {
-  display: block;
-}
+
 .submenu_item .arrow-left {
   position: absolute;
   right: 10px;
+  display: inline-block;
+  margin-right: auto;
 }
+
+.sidebar.close .submenu {
+  display: none;
+}
+
+.show_submenu ~ .submenu {
+  display: block;
+}
+
 .show_submenu .arrow-left {
   transform: rotate(90deg);
 }
 
-/* ----------------------------------------------
-   6) BOTTOM “Collapse” BUTTON
------------------------------------------------ */
+.submenu .sublink {
+  padding: 15px 15px 15px 52px;
+}
+
 .bottom_content {
   position: fixed;
   bottom: 60px;
@@ -233,25 +246,68 @@ body.dark {
   cursor: pointer;
   transition: all 0.5s ease;
 }
+
 .bottom {
+  position: absolute;
   display: flex;
   align-items: center;
+  left: 0;
   justify-content: space-around;
   padding: 18px 0;
+  text-align: center;
+  width: 100%;
+  color: var(--grey-color);
   border-top: 1px solid var(--grey-color-light);
   background-color: var(--white-color);
-  color: var(--grey-color);
 }
+
 .bottom i {
   font-size: 20px;
 }
-.bottom_content .bottom span {
+
+.bottom span {
   font-size: 18px;
 }
-/* When collapsed, shift bottom button over */
+
 .sidebar.close .bottom_content {
   width: 50px;
   left: 15px;
 }
+
 .sidebar.close .bottom span {
-  display: none
+  display: none;
+}
+
+.sidebar.hoverable .collapse_sidebar {
+  display: none;
+}
+
+#sidebarOpen {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  #sidebarOpen {
+    font-size: 25px;
+    display: block;
+    margin-right: 10px;
+    cursor: pointer;
+    color: var(--grey-color);
+  }
+  .sidebar.close {
+    left: -100%;
+  }
+  .search_bar {
+    display: none;
+  }
+  .sidebar.close .bottom_content {
+    left: -100%;
+  }
+}
+
+/* 🛑 Hide top-bar brand, bell & profile */
+.logo_item,
+.navbar_content .bx.bx-bell,
+.navbar_content img {
+  display: none !important;
+}
