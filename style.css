@@ -125,8 +125,6 @@ body.dark {
   content: "Dashboard";
 }
 
-/* ===== THIS IS THE ONLY LINE YOU CHANGE: ===== */
-/* Rename “Editor” → “Report Navigation” */
 .menu_editor::before {
   content: "Report Navigation";
 }
