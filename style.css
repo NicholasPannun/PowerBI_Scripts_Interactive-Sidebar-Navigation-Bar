@@ -88,7 +88,7 @@ body.dark {
 
 .navbar_content i {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   color: var(--grey-color);
 }
 
@@ -175,7 +175,7 @@ body.dark {
 
 .navlink_icon {
   position: relative;
-  font-size: 22px;
+  font-size: 18px;
   min-width: 50px;
   line-height: 40px;
   display: inline-block;
