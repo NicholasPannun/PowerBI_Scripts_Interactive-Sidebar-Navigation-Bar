@@ -1,86 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Boxicons CSS -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <title>Interactive Sidebar – Report Navigation</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- navbar -->
-    <nav class="navbar">
-      <div class="logo_item">
-        <i class="bx bx-menu" id="sidebarOpen"></i>
-        <img src="images/logo.png" alt=""></i>CodingNepal
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Sidebar – Dashboard & Navigation</title>
 
-      <div class="search_bar">
-        <input type="text" placeholder="Search" />
-      </div>
+  <!-- Boxicons (for sidebar and navbar icons) -->
+  <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
 
-      <div class="navbar_content">
-        <i class="bi bi-grid"></i>
-        <i class='bx bx-sun' id="darkLight"></i>
-        <i class='bx bx-bell' ></i>
-        <img src="images/profile.jpg" alt="" class="profile" />
-      </div>
-    </nav>
+  <!-- Your custom stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <!-- Logo (hidden via CSS) -->
+    <div class="logo_item">
+      <img src="images/logo.png" alt="Logo" />
+      <span class="logo_name">CodingNepal</span>
+    </div>
 
-    <!-- sidebar -->
-    <nav class="sidebar">
-      <div class="menu_content">
-        <ul class="menu_items">
-          <div class="menu_title menu_dahsboard"></div>
-          <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
-          <!-- start -->
-          <li class="item">
-            <div href="#" class="nav_link submenu_item">
-              <span class="navlink_icon">
-                <i class="bx bx-home-alt"></i>
-              </span>
-              <span class="navlink">Home</span>
-              <i class="bx bx-chevron-right arrow-left"></i>
-            </div>
+    <!-- Search bar -->
+    <div class="search_bar">
+      <input type="text" placeholder="Search" />
+    </div>
 
-            <ul class="menu_items submenu">
-              <a href="#" class="nav_link sublink" data-page="Page 22">Page 22</a>
-              <a href="#" class="nav_link sublink">Nav Sub Link</a>
-              <a href="#" class="nav_link sublink">Nav Sub Link</a>
-              <a href="#" class="nav_link sublink">Nav Sub Link</a>
-            </ul>
-          </li>
-          <!-- end -->
+    <!-- Right-side navbar icons (bell + avatar hidden via CSS) -->
+    <div class="navbar_content">
+      <i class="bx bx-moon change-theme"></i>
+      <i class="bx bx-bell"></i>
+      <img src="images/avatar.jpg" alt="Profile" />
+    </div>
+  </nav>
 
-          <!-- duplicate this li tag if you want to add or remove  navlink with submenu -->
-          <!-- start -->
-          <li class="item">
-            <div href="#" class="nav_link submenu_item">
-              <span class="navlink_icon">
-                <i class="bx bx-grid-alt"></i>
-              </span>
-              <span class="navlink">Overview</span>
-              <i class="bx bx-chevron-right arrow-left"></i>
-            </div>
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="sidebar">
+    <div class="menu_content">
 
-            <ul class="menu_items submenu">
-              <a href="#" class="nav_link sublink">Nav Sub Link</a>
-              <a href="#" class="nav_link sublink">Nav Sub Link</a>
-              <a href="#" class="nav_link sublink">Nav Sub Link</a>
-              <a href="#" class="nav_link sublink">Nav Sub Link</a>
-            </ul>
-          </li>
-          <!-- end -->
-        </ul>
+      <!-- ===== Dashboard Section ===== -->
+      <p class="menu_dahsboard menu_title"></p>
+      <ul class="menu_items">
+        <!-- 1) Home (with submenu: Home + Welcome Message) -->
+        <li class="navlink submenu_item">
+          <a href="#" class="nav_link">
+            <i class="bx bx-home navlink_icon"></i>
+            <span>Home</span>
+            <i class="bx bx-chevron-right arrow-left"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="home.html" class="sublink">Home</a></li>
+            <li><a href="#welcome" class="sublink">Welcome Message</a></li>
+          </ul>
+        </li>
 
-        <ul class="menu_items">
-          <div class="menu_title menu_editor"></div>
-          <!-- duplicate these li tag if you want to add or remove navlink only -->
-          <!-- Start -->
+        <!-- 2) Overview (with submenu: Overview) -->
+        <li class="navlink submenu_item">
+          <a href="#" class="nav_link">
+            <i class="bx bx-grid-alt navlink_icon"></i>
+            <span>Overview</span>
+            <i class="bx bx-chevron-right arrow-left"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="overview.html" class="sublink">Overview</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- ===== Navigation Section (formerly “Editor”) ===== -->
+      <p class="menu_editor menu_title"></p>
+      <ul class="menu_items">
         <!-- 1) Table of Contents -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#table-of-contents" class="nav_link">
             <i class="bx bx-list-ul navlink_icon"></i>
             <span>Table of Contents</span>
           </a>
@@ -88,7 +82,7 @@
 
         <!-- 2) Page 1 – Medical Health -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-1" class="nav_link">
             <i class="bx bx-heart navlink_icon"></i>
             <span>Page 1 – Medical Health</span>
           </a>
@@ -96,7 +90,7 @@
 
         <!-- 3) Page 2 – Medical Health Recommendations -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-2" class="nav_link">
             <i class="bx bx-medical navlink_icon"></i>
             <span>Page 2 – Medical Health Recommendations</span>
           </a>
@@ -104,7 +98,7 @@
 
         <!-- 4) Page 3 – Eating Habits -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-3" class="nav_link">
             <i class="bx bx-food-menu navlink_icon"></i>
             <span>Page 3 – Eating Habits</span>
           </a>
@@ -112,7 +106,7 @@
 
         <!-- 5) Page 4 – Eating Habits -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-4" class="nav_link">
             <i class="bx bx-food navlink_icon"></i>
             <span>Page 4 – Eating Habits</span>
           </a>
@@ -120,7 +114,7 @@
 
         <!-- 6) Page 5 – Eating Habits Recommendation -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-5" class="nav_link">
             <i class="bx bx-notepad navlink_icon"></i>
             <span>Page 5 – Eating Habits Recommendation</span>
           </a>
@@ -128,7 +122,7 @@
 
         <!-- 7) Page 6 – Physical Activity -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-6" class="nav_link">
             <i class="bx bx-dumbbell navlink_icon"></i>
             <span>Page 6 – Physical Activity</span>
           </a>
@@ -136,7 +130,7 @@
 
         <!-- 8) Page 7 – Physical Activity Recommendation -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-7" class="nav_link">
             <i class="bx bx-check-shield navlink_icon"></i>
             <span>Page 7 – Physical Activity Recommendation</span>
           </a>
@@ -144,7 +138,7 @@
 
         <!-- 9) Page 8 – Smoking -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-8" class="nav_link">
             <i class="bx bx-smoking navlink_icon"></i>
             <span>Page 8 – Smoking</span>
           </a>
@@ -152,7 +146,7 @@
 
         <!-- 10) Page 9 – Smoking Recommendation -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-9" class="nav_link">
             <i class="bx bx-shield-check navlink_icon"></i>
             <span>Page 9 – Smoking Recommendation</span>
           </a>
@@ -160,7 +154,7 @@
 
         <!-- 11) Page 10 – Sleep -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-10" class="nav_link">
             <i class="bx bx-bed navlink_icon"></i>
             <span>Page 10 – Sleep</span>
           </a>
@@ -168,7 +162,7 @@
 
         <!-- 12) Page 11 – Sleep Recommendation -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-11" class="nav_link">
             <i class="bx bx-moon navlink_icon"></i>
             <span>Page 11 – Sleep Recommendation</span>
           </a>
@@ -176,7 +170,7 @@
 
         <!-- 13) Page 12 – Mental Health -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-12" class="nav_link">
             <i class="bx bx-brain navlink_icon"></i>
             <span>Page 12 – Mental Health</span>
           </a>
@@ -184,7 +178,7 @@
 
         <!-- 14) Page 13 – Mental Health Recommendation -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-13" class="nav_link">
             <i class="bx bx-chat-heart navlink_icon"></i>
             <span>Page 13 – Mental Health Recommendation</span>
           </a>
@@ -192,7 +186,7 @@
 
         <!-- 15) Page 14 – Worklife Balance Practices -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-14" class="nav_link">
             <i class="bx bx-briefcase-alt-2 navlink_icon"></i>
             <span>Page 14 – Worklife Balance Practices</span>
           </a>
@@ -200,7 +194,7 @@
 
         <!-- 16) Page 15 – Worklife Balance Practices Recommendation -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-15" class="nav_link">
             <i class="bx bx-like navlink_icon"></i>
             <span>Page 15 – Worklife Balance Practices Recommendation</span>
           </a>
@@ -208,7 +202,7 @@
 
         <!-- 17) Page 16 – Finances -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-16" class="nav_link">
             <i class="bx bx-wallet navlink_icon"></i>
             <span>Page 16 – Finances</span>
           </a>
@@ -216,7 +210,7 @@
 
         <!-- 18) Page 17 – Finances Recommendation -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-17" class="nav_link">
             <i class="bx bx-bar-chart-alt-2 navlink_icon"></i>
             <span>Page 17 – Finances Recommendation</span>
           </a>
@@ -224,7 +218,7 @@
 
         <!-- 19) Page 18 – Organizational Practices -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-18" class="nav_link">
             <i class="bx bx-buildings navlink_icon"></i>
             <span>Page 18 – Organizational Practices</span>
           </a>
@@ -232,7 +226,7 @@
 
         <!-- 20) Page 19 – Organizational Practices Recommendation -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-19" class="nav_link">
             <i class="bx bx-check-up navlink_icon"></i>
             <span>Page 19 – Organizational Practices Recommendation</span>
           </a>
@@ -240,7 +234,7 @@
 
         <!-- 21) Page 20 – Work Environment -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-20" class="nav_link">
             <i class="bx bx-home-circle navlink_icon"></i>
             <span>Page 20 – Work Environment</span>
           </a>
@@ -248,7 +242,7 @@
 
         <!-- 22) Page 21 – Work Environment Recommendations -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-21" class="nav_link">
             <i class="bx bx-building-house navlink_icon"></i>
             <span>Page 21 – Work Environment Recommendations</span>
           </a>
@@ -256,63 +250,60 @@
 
         <!-- 23) Page 22 – Family Situation -->
         <li class="navlink">
-          <a href="#" class="nav_link">
+          <a href="#page-22" class="nav_link">
             <i class="bx bx-family navlink_icon"></i>
             <span>Page 22 – Family Situation</span>
           </a>
         </li>
-      </ul>        
-<!-- ===== Setting Section ===== -->        
-        <ul class="menu_items">
-          <div class="menu_title menu_setting"></div>
-          <li class="item">
-            <a href="#" class="nav_link">
-              <span class="navlink_icon">
-                <i class="bx bx-flag"></i>
-              </span>
-              <span class="navlink">Notice board</span>
-            </a>
-          </li>
-          <li class="item">
-            <a href="#" class="nav_link">
-              <span class="navlink_icon">
-                <i class="bx bx-medal"></i>
-              </span>
-              <span class="navlink">Award</span>
-            </a>
-          </li>
-          <li class="item">
-            <a href="#" class="nav_link">
-              <span class="navlink_icon">
-                <i class="bx bx-cog"></i>
-              </span>
-              <span class="navlink">Setting</span>
-            </a>
-          </li>
-          <li class="item">
-            <a href="#" class="nav_link">
-              <span class="navlink_icon">
-                <i class="bx bx-layer"></i>
-              </span>
-              <span class="navlink">Features</span>
-            </a>
-          </li>
-        </ul>
+      </ul>
 
-        <!-- Sidebar Open / Close -->
-        <div class="bottom_content">
-          <div class="bottom expand_sidebar">
-            <span> Expand</span>
-            <i class='bx bx-log-in' ></i>
-          </div>
-          <div class="bottom collapse_sidebar">
-            <span> Collapse</span>
-            <i class='bx bx-log-out'></i>
-          </div>
+      <!-- ===== Setting Section (optional) ===== -->
+      <!--<p class="menu_setting menu_title"></p>
+      <ul class="menu_items">
+        <li class="navlink">
+          <a href="notice-board.html" class="nav_link">
+            <i class="bx bx-flag navlink_icon"></i>
+            <span>Notice board</span>
+          </a>
+        </li>
+        <li class="navlink">
+          <a href="award.html" class="nav_link">
+            <i class="bx bx-medal navlink_icon"></i>
+            <span>Award</span>
+          </a>
+        </li>
+        <li class="navlink">
+          <a href="settings.html" class="nav_link">
+            <i class="bx bx-cog navlink_icon"></i>
+            <span>Setting</span>
+          </a>
+        </li>
+        <li class="navlink">
+          <a href="features.html" class="nav_link">
+            <i class="bx bx-layer navlink_icon"></i>
+            <span>Features</span>
+          </a>
+        </li>
+      </ul> -->
+
+      <!-- ===== Bottom “Collapse” / “Expand” Button ===== -->
+      <div class="bottom_content">
+        <div class="bottom collapse_sidebar">
+          <i class="bx bx-log-out"></i>
+          <span>Collapse</span>
+        </div>
+        <div class="bottom expand_sidebar">
+          <i class="bx bx-log-in"></i>
+          <span>Expand</span>
         </div>
       </div>
-    </nav>
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-  </body>
+    </div>
+  </aside>
+
+  <!-- ========== MAIN CONTENT (currently empty) ========== -->
+  <main class="main-content"></main>
+
+  <!-- ========== SCRIPT ========== -->
+  <script src="script.js"></script>
+</body>
 </html>
