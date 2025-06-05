@@ -325,7 +325,7 @@ body.dark {
 .navbar_content .bx.bx-bell,
 .navbar_content img,
 .search_bar,
-.change-theme {
+.bx bx-sun {
   display: none !important;
 }
 
