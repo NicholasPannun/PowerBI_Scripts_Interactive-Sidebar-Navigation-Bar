@@ -2,45 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Sidebar with Report Navigation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Sidebar Navigation</title>
 
-  <!-- 1️⃣ Boxicons CSS for icons -->
-  <link
-    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-    rel="stylesheet"
-  />
+  <!-- BoxIcons for sidebar & navbar icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-  <!-- 2️⃣ Link to your custom stylesheet -->
+  <!-- Your custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ============================
-       NAVBAR (Top Bar)
-       ============================ -->
+  <!-- ====== NAVBAR ====== -->
   <nav class="navbar">
-    <!-- Left side of navbar: (Search icon / toggle on mobile) -->
-    <i class="bx bx-menu" id="sidebarOpen" ></i>
+    <!-- Hamburger / menu‐open button for small screens -->
+    <i class="bx bx-menu" id="sidebarOpen"></i>
 
-    <!-- Center of navbar: search bar -->
-    <div class="search_bar">
-      <input type="text" placeholder="Search" />
+    <!-- Logo + site name -->
+    <div class="logo_item">
+      <img src="logo.png" alt="Logo" />
+      <span class="logo_name">CodingNepal</span>
     </div>
 
-    <!-- Right side of navbar: (Bell + Profile) -->
+    <!-- Search field -->
+    <form class="search_bar">
+      <input type="text" placeholder="Search" />
+    </form>
+
+    <!-- Right‐hand icons (dark mode toggle, bell, profile) -->
     <div class="navbar_content">
-      <i class="bx bx-sun toggle-dark"></i>
+      <i class="bx bx-moon" id="darkModeToggle"></i>
       <i class="bx bx-bell"></i>
-      <img src="https://via.placeholder.com/35" alt="Profile Picture" />
+      <img src="avatar.jpg" alt="Profile" />
     </div>
   </nav>
 
-  <!-- ============================
-       SIDEBAR (Left Menu)
-       ============================ -->
+  <!-- ====== SIDEBAR ====== -->
   <aside class="sidebar">
     <div class="menu_content">
-      <!-- ========= Dashboard Section ========= -->
+
+      <!-- === 1) Dashboard Section === -->
       <p class="menu_dahsboard menu_title"></p>
       <ul class="menu_items">
         <!-- Home -->
@@ -51,7 +51,6 @@
             <i class="bx bx-chevron-right arrow-left"></i>
           </a>
         </li>
-
         <!-- Overview -->
         <li class="navlink">
           <a href="overview.html" class="nav_link">
@@ -62,8 +61,7 @@
         </li>
       </ul>
 
-      <!-- ======== Report Navigation Section ======== -->
-      <!-- The actual label “Report Navigation” is injected via CSS -->
+      <!-- === 2) Report Navigation Section (formerly “Editor”) === -->
       <p class="menu_editor menu_title"></p>
       <ul class="menu_items">
         <!-- 1) Cover -->
@@ -98,7 +96,7 @@
           </a>
         </li>
 
-        <!-- 5) Overview -->
+        <!-- 5) Overview (Introduction) -->
         <li class="navlink">
           <a href="#overview-content" class="nav_link">
             <i class="bx bx-clipboard navlink_icon"></i>
@@ -283,8 +281,8 @@
         </li>
       </ul>
 
-      <!-- ======== Setting Section (REMOVED COMPLETELY) ======== -->
-      <!-- If you ever want to restore Setting, re-insert exactly this block:
+      <!-- === 3) Setting Section (COMPLETELY REMOVED) ===
+           If you ever want to re‐enable “Setting,” re‐insert this block. 
       <p class="menu_setting menu_title"></p>
       <ul class="menu_items">
         <li class="navlink">
@@ -314,8 +312,8 @@
       </ul>
       -->
 
-      <!-- ======== Bottom “Collapse” Button (unchanged) ======== -->
-      <div class="bottom_content">
+      <!-- === Bottom “Collapse” button === -->
+      <div class="bottom_content collapse_sidebar">
         <div class="bottom">
           <i class="bx bx-log-out"></i>
           <span>Collapse</span>
@@ -324,16 +322,19 @@
     </div>
   </aside>
 
-  <!-- ============================
-       MAIN CONTENT AREA
-       ============================ -->
-  <section class="home-section">
-    <div class="text">Main Content Goes Here</div>
+  <!-- ====== MAIN CONTENT AREA (Placeholder) ====== -->
+  <section class="home">
+    <!-- Your report or page content goes here.
+         Each “#page-1”, “#page-2”, etc., can be in‐page anchors or separate
+         sections. For demo, we’ll just show a placeholder div: -->
+    <div style="padding: 100px 30px;">
+      <h1>Welcome to the Main Content Area</h1>
+      <p>Click the links in the sidebar to jump to the corresponding section.</p>
+      <!-- You can add real <section id="page-1"> … </section> below, etc. -->
+    </div>
   </section>
 
-  <!-- ============================
-       SCRIPT IMPORTS
-       ============================ -->
+  <!-- Your custom JS -->
   <script src="script.js"></script>
 </body>
 </html>
