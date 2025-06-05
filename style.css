@@ -137,10 +137,22 @@ body.dark {
 
 .menu_dahsboard::before {
   content: "Dashboard";
+  font-weight: 700;    /* ← make it bold */
+  color: var(--grey-color);
+  display: block;
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 18px;
 }
 
 .menu_editor::before {
-  content: "Navigation";
+  content: "Navigation"; /* or "Report Navigation" if you renamed it */
+  font-weight: 700;      /* ← make it bold */
+  color: var(--grey-color);
+  display: block;
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 18px;
 }
 
 .menu_setting::before {
@@ -308,9 +320,11 @@ body.dark {
   }
 }
 
-/* 🛑 Hide top-bar brand, bell & profile */
+/* 🛑 Hide top-bar brand, bell & profile, search bar */
 .logo_item,
 .navbar_content .bx.bx-bell,
-.navbar_content img {
+.navbar_content img,
+.search_bar {
   display: none !important;
 }
+
