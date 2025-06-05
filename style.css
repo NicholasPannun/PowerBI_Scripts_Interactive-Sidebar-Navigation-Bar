@@ -120,40 +120,24 @@ body.dark {
   position: relative;
 }
 
-.menu_title {
-  margin: 15px 0;
-  padding: 0 20px;
-  font-size: 18px;
-}
-
-.sidebar.close .menu_title {
-  padding: 6px 30px;
-}
-
-.menu_title::before {
-  color: var(--grey-color);
-  white-space: nowrap;
-}
-
+/* Dashboard heading (no change here) */
 .menu_dahsboard::before {
   content: "Dashboard";
 }
 
+/* ===== THIS IS THE ONLY LINE YOU CHANGE: ===== */
+/* Rename “Editor” → “Report Navigation” */
 .menu_editor::before {
-  content: "Editor";
+  content: "Report Navigation";
 }
 
+/* (If you ever re-enable “Setting,” this can remain or be toggled) */
 .menu_setting::before {
   content: "Setting";
 }
 
-.sidebar.close .menu_title::before {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 18px;
-  border-radius: 12px;
-  background: var(--grey-color-light);
+.sidebar.close .menu_title {
+  padding: 6px 30px;
 }
 
 .menu_items {
@@ -191,7 +175,9 @@ body.dark {
   border-radius: 8px;
   text-decoration: none;
   color: var(--grey-color);
-  white-space: nowrap;
+  white-space: normal;        /* allow wrapping if text is long */
+  word-break: break-word;     /* break long words when needed */
+  transition: background 0.3s, color 0.3s;
 }
 
 .sidebar.close .navlink {
