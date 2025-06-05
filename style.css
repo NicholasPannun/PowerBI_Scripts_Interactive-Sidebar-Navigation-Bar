@@ -1,4 +1,4 @@
-/* Import Google font – Poppins */
+/* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 * {
@@ -31,7 +31,7 @@ body.dark {
   --grey-color-light: #aaa;
 }
 
-/* ======= NAVBAR STYLES ======= */
+/* navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -55,7 +55,6 @@ body.dark {
   color: var(--blue-color);
 }
 
-/* Navbar images (avatar, logo) */
 .navbar img {
   width: 35px;
   height: 35px;
@@ -93,7 +92,7 @@ body.dark {
   color: var(--grey-color);
 }
 
-/* ======= SIDEBAR STYLES ======= */
+/* sidebar */
 .sidebar {
   background-color: var(--white-color);
   width: 260px;
@@ -121,43 +120,47 @@ body.dark {
   position: relative;
 }
 
-/* Dashboard heading */
-.menu_dahsboard::before {
-  content: "Dashboard";
-  color: var(--grey-color);
-  display: block;
-  margin: 15px 0;
-  padding: 0 20px;
-  font-size: 18px;
-}
-
-/* Report Navigation heading (replaces “Editor”) */
-.menu_editor::before {
-  content: "Report Navigation";
-  color: var(--grey-color);
-  display: block;
-  margin: 15px 0;
-  padding: 0 20px;
-  font-size: 18px;
-}
-
-/* (No .menu_setting::before because "Setting" is removed) */
-
 .menu_title {
-  /* shared heading styles can live here */
+  margin: 15px 0;
+  padding: 0 20px;
+  font-size: 18px;
 }
 
 .sidebar.close .menu_title {
   padding: 6px 30px;
 }
 
-/* Sidebar list reset */
+.menu_title::before {
+  color: var(--grey-color);
+  white-space: nowrap;
+}
+
+.menu_dahsboard::before {
+  content: "Dashboard";
+}
+
+.menu_editor::before {
+  content: "Editor";
+}
+
+.menu_setting::before {
+  content: "Setting";
+}
+
+.sidebar.close .menu_title::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 18px;
+  border-radius: 12px;
+  background: var(--grey-color-light);
+}
+
 .menu_items {
   padding: 0;
   list-style: none;
 }
 
-/* Icon to left of each link */
 .navlink_icon {
   position: relative;
   font-size: 22px;
@@ -168,7 +171,6 @@ body.dark {
   border-radius: 6px;
 }
 
-/* Hover‐background behind icon */
 .navlink_icon::before {
   content: "";
   position: absolute;
@@ -181,7 +183,6 @@ body.dark {
   background: var(--blue-color);
 }
 
-/* Each link container */
 .sidebar .nav_link {
   display: flex;
   align-items: center;
@@ -190,16 +191,13 @@ body.dark {
   border-radius: 8px;
   text-decoration: none;
   color: var(--grey-color);
-  white-space: normal;        /* allow wrapping if text is long */
-  word-break: break-word;     /* break long words when needed */
-  transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
 }
 
 .sidebar.close .navlink {
-  display: none; /* hides text when sidebar is collapsed */
+  display: none;
 }
 
-/* Hover state for links */
 .nav_link:hover {
   color: var(--white-color);
   background: var(--blue-color);
@@ -209,7 +207,37 @@ body.dark {
   background: var(--white-color);
 }
 
-/* Bottom “Collapse” button styles */
+.submenu_item {
+  cursor: pointer;
+}
+
+.submenu {
+  display: none;
+}
+
+.submenu_item .arrow-left {
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+  margin-right: auto;
+}
+
+.sidebar.close .submenu {
+  display: none;
+}
+
+.show_submenu ~ .submenu {
+  display: block;
+}
+
+.show_submenu .arrow-left {
+  transform: rotate(90deg);
+}
+
+.submenu .sublink {
+  padding: 15px 15px 15px 52px;
+}
+
 .bottom_content {
   position: fixed;
   bottom: 60px;
@@ -254,12 +282,10 @@ body.dark {
   display: none;
 }
 
-/* Hide the “Open Sidebar” icon on desktop */
 #sidebarOpen {
   display: none;
 }
 
-/* Responsive: on narrow screens, allow sidebar to hide completely */
 @media screen and (max-width: 768px) {
   #sidebarOpen {
     font-size: 25px;
@@ -279,8 +305,7 @@ body.dark {
   }
 }
 
-/* ======= HIDE TOP-BAR ELEMENTS ======= */
-/* Hide logo text/image, notification bell, and user avatar */
+/* 🛑 Hide top-bar brand, bell & profile */
 .logo_item,
 .navbar_content .bx.bx-bell,
 .navbar_content img {
