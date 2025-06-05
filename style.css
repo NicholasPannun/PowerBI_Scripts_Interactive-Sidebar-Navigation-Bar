@@ -1,9 +1,11 @@
-/* ================================================
-   Import Google font - Poppins
-   ================================================ */
+/* ----------------------------------------------
+   1) Import Poppins font
+----------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-/* ==== Reset + Global Styles ==== */
+/* ----------------------------------------------
+   2) Global resets & variables
+----------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -18,14 +20,15 @@
   --grey-color-light: #aaa;
 }
 
-/* ==== Body / Dark Mode Variables ==== */
 body {
-  background-color: transparent;
+  background-color: transparent; /* Transparent so it layers under HTML Content in Power BI */
   transition: all 0.5s ease;
 }
+
 body.dark {
   background-color: transparent;
 }
+
 body.dark {
   --white-color: #333;
   --blue-color: #fff;
@@ -33,14 +36,14 @@ body.dark {
   --grey-color-light: #aaa;
 }
 
-/* ================================================
-   NAVBAR (Top Bar)
-   ================================================ */
+/* ----------------------------------------------
+   3) NAVBAR STYLES
+----------------------------------------------- */
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
   left: 0;
+  width: 100%;
   background-color: var(--white-color);
   display: flex;
   align-items: center;
@@ -50,21 +53,32 @@ body.dark {
   box-shadow: 0 0 2px var(--grey-color-light);
 }
 
-/* Hide the default logo text (if any was in HTML); we are overriding brand display */
-.logo_item {
-  display: none;
-}
-
-/* The menu toggle icon on mobile */
 #sidebarOpen {
   font-size: 25px;
-  display: none;
-  margin-right: 10px;
   cursor: pointer;
   color: var(--grey-color);
+  display: none; /* hidden by default, shown on mobile */
 }
 
-/* Search bar styling */
+/* Logo + site name */
+.logo_item {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--blue-color);
+}
+
+/* Logo <img> inside navbar */
+.navbar img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Search box */
 .search_bar {
   height: 47px;
   max-width: 430px;
@@ -82,7 +96,7 @@ body.dark {
   padding: 0 20px;
 }
 
-/* Right side icons (sun toggle, bell, avatar) */
+/* Right-hand icons in navbar */
 .navbar_content {
   display: flex;
   align-items: center;
@@ -93,16 +107,10 @@ body.dark {
   font-size: 20px;
   color: var(--grey-color);
 }
-.navbar_content img {
-  width: 35px;
-  height: 35px;
-  object-fit: cover;
-  border-radius: 50%;
-}
 
-/* ================================================
-   SIDEBAR (Left Menu)
-   ================================================ */
+/* ----------------------------------------------
+   4) SIDEBAR STYLES
+----------------------------------------------- */
 .sidebar {
   background-color: var(--white-color);
   width: 260px;
@@ -110,64 +118,62 @@ body.dark {
   top: 0;
   left: 0;
   height: 100%;
-  padding: 80px 20px; /* leave space for the fixed navbar */
+  padding: 80px 20px; /* space for navbar above */
   z-index: 100;
-  overflow-y: scroll; /* allow scrolling when many items */
+  overflow-y: scroll;      /* allows scrolling when many items */
   box-shadow: 0 0 1px var(--grey-color-light);
   transition: all 0.5s ease;
 }
 
-/* Collapsed sidebar state: narrow */
+/* When collapsed, sidebar shrinks to 80px width */
 .sidebar.close {
   padding: 60px 0;
   width: 80px;
 }
 
-/* Remove scrollbar thumb on WebKit */
+/* Hide scrollbar in WebKit browsers */
 .sidebar::-webkit-scrollbar {
   display: none;
 }
 
-/* Section headings (Dashboard, Report Navigation, etc.) */
-.menu_content {
-  position: relative;
-}
+/* Menu section titles (Dashboard / Report Navigation / Setting) */
 .menu_title {
   margin: 15px 0;
   padding: 0 20px;
   font-size: 18px;
   color: var(--grey-color);
-  text-transform: uppercase;
 }
 
-/* Dashboard -> pseudo-inject “Dashboard” text */
+/* “Dashboard” heading text via pseudo-element */
 .menu_dahsboard::before {
   content: "Dashboard";
-  color: var(--grey-color);
-  font-weight: 500;
 }
 
-/* Editor (renamed to Report Navigation in our override below) */
-.menu_editor::before {
-  content: "Report Navigation";
-  color: var(--grey-color);
-  font-weight: 500;
+/* “Editor” was renamed to “Report Navigation” via CSS override below */
+
+/* “Setting” is removed from HTML, so we don’t need a ::before for it */
+
+/* When sidebar is collapsed, remove text of menu_title */
+.sidebar.close .menu_title {
+  padding: 6px 30px;
+}
+.sidebar.close .menu_title::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 18px;
+  border-radius: 12px;
+  background: var(--grey-color-light);
 }
 
-/* (We removed Setting HTML entirely, so no need for .menu_setting here) */
-
-/* List of items under each section */
+/* ----------------------------------------------
+   5) MENU ITEMS STYLES
+----------------------------------------------- */
 .menu_items {
-  padding: 0;
   list-style: none;
+  padding: 0;
 }
 
-/* Each nav link container */
-.navlink {
-  position: relative;
-}
-
-/* Icon to the left of text */
 .navlink_icon {
   position: relative;
   font-size: 22px;
@@ -176,17 +182,11 @@ body.dark {
   display: inline-block;
   text-align: center;
   border-radius: 6px;
-  color: var(--grey-color);
 }
-.navlink_icon::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: calc(100% + 100px);
-  left: -20px;
+.navlink_icon:hover {
+  background: var(--blue-color);
 }
 
-/* Actual clickable link */
 .nav_link {
   display: flex;
   align-items: center;
@@ -197,38 +197,34 @@ body.dark {
   color: var(--grey-color);
   white-space: nowrap;
 }
-
-/* Hover/focus styles for nav links */
-.navlink:hover .navlink_icon {
-  background: var(--blue-color);
-  color: var(--white-color);
-}
 .nav_link:hover {
   color: var(--white-color);
   background: var(--blue-color);
 }
 
-/* If sidebar is collapsed, hide all .nav_link text */
-.sidebar.close .nav_link span {
+/* Hide link text when sidebar is collapsed */
+.sidebar.close .navlink .nav_link span {
   display: none;
 }
-/* When collapsed, navicon sits centered */
-.sidebar.close .navlink_icon {
-  margin: 0 auto;
-}
 
-/* Submenu logic (not used here, but preserved for potential future expansions) */
+/* Submenus (not used in this example, but kept for reference) */
 .submenu {
   display: none;
 }
 .show_submenu ~ .submenu {
   display: block;
 }
+.submenu_item .arrow-left {
+  position: absolute;
+  right: 10px;
+}
 .show_submenu .arrow-left {
   transform: rotate(90deg);
 }
 
-/* Bottom “Collapse” button final position */
+/* ----------------------------------------------
+   6) BOTTOM “Collapse” BUTTON
+----------------------------------------------- */
 .bottom_content {
   position: fixed;
   bottom: 60px;
@@ -238,71 +234,24 @@ body.dark {
   transition: all 0.5s ease;
 }
 .bottom {
-  position: absolute;
   display: flex;
   align-items: center;
-  left: 0;
   justify-content: space-around;
   padding: 18px 0;
-  text-align: center;
-  width: 100%;
-  color: var(--grey-color);
   border-top: 1px solid var(--grey-color-light);
   background-color: var(--white-color);
+  color: var(--grey-color);
 }
 .bottom i {
   font-size: 20px;
 }
-.bottom span {
+.bottom_content .bottom span {
   font-size: 18px;
 }
+/* When collapsed, shift bottom button over */
 .sidebar.close .bottom_content {
   width: 50px;
   left: 15px;
 }
 .sidebar.close .bottom span {
-  display: none;
-}
-
-/* ================================================
-   MEDIA QUERIES (for smaller screens)
-   ================================================ */
-@media screen and (max-width: 768px) {
-  /* Show the mobile “hamburger” icon */
-  #sidebarOpen {
-    display: block;
-  }
-  /* When viewport < 768px, if “.close” class is applied, slide sidebar off-screen */
-  .sidebar.close {
-    left: -100%;
-  }
-  /* Hide search bar on smaller screens */
-  .search_bar {
-    display: none;
-  }
-  /* Hide bottom collapse on small screens when closed */
-  .sidebar.close .bottom_content {
-    left: -100%;
-  }
-}
-
-/* ================================================
-   EXTRA RULES TO HIDE TOP-BAR ELEMENTS
-   ================================================ */
-
-/* 1) Hide the Boxicon bell in top-right */
-.navbar_content .bx.bx-bell {
-  display: none !important;
-}
-
-/* 2) Hide the avatar <img> in top-right */
-.navbar_content img {
-  display: none !important;
-}
-
-/* 3) Hide the site “CodingNepal” brand text/logo (if it had shown up) */
-.logo_item,
-.logo_item *,
-.navbar img {
-  display: none !important;
-}
+  display: none
