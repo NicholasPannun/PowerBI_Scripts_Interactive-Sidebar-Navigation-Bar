@@ -140,7 +140,7 @@ body.dark {
 }
 
 .menu_editor::before {
-  content: "Editor";
+  content: "Navigation";
 }
 
 .menu_setting::before {
