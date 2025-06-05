@@ -183,6 +183,7 @@ body.dark {
   background: var(--blue-color);
 }
 
+/* Allow long nav_link text to wrap onto multiple lines */
 .sidebar .nav_link {
   display: flex;
   align-items: center;
@@ -191,7 +192,9 @@ body.dark {
   border-radius: 8px;
   text-decoration: none;
   color: var(--grey-color);
-  white-space: nowrap;
+  white-space: normal;       /* allow wrapping */
+  word-break: break-word;    /* break long words */
+  transition: background 0.3s, color 0.3s;
 }
 
 .sidebar.close .navlink {
