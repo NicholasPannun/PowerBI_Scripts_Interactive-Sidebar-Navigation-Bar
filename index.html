@@ -4,10 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Boxicons CSS -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <title>Interactive Sidebar – Report Navigation</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -16,7 +13,7 @@
     <nav class="navbar">
       <div class="logo_item">
         <i class="bx bx-menu" id="sidebarOpen"></i>
-        <img src="images/logo.png" alt="" />CodingNepal
+        <img src="images/logo.png" alt=""></i>CodingNepal
       </div>
 
       <div class="search_bar">
@@ -26,7 +23,7 @@
       <div class="navbar_content">
         <i class="bi bi-grid"></i>
         <!-- <i class='bx bx-sun' id="darkLight"></i> -->
-        <i class="bx bx-bell"></i>
+        <i class='bx bx-bell' ></i>
         <img src="images/profile.jpg" alt="" class="profile" />
       </div>
     </nav>
@@ -34,251 +31,341 @@
     <!-- sidebar -->
     <nav class="sidebar">
       <div class="menu_content">
-
-        <!-- Dashboard Navigation -->
         <ul class="menu_items">
-          <div class="menu_title menu_dashboard"></div>
-          
-          <!-- • Home -->
+          <div class="menu_title menu_dahsboard"></div>
+          <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+          <!-- start -->
           <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/9226db32c370b21cea54?experience=power-bi"
-              class="nav_link submenu_item"
-            >
-              <span class="navlink_icon"><i class="bx bx-home-alt"></i></span>
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-home-alt"></i>
+              </span>
               <span class="navlink">Home</span>
-            </a>
-          </li>
+             <!-- <i class="bx bx-chevron-right arrow-left"></i> -->
+            </div>
 
-          <!-- • Overview -->
+            <!--<ul class="menu_items submenu">
+              <!--<a href="#" class="nav_link sublink" data-page="Page 22">Homepage</a> 
+              <a href="#" class="nav_link sublink" data-page="Page 22">Welcome Message</a>
+             <a href="#" class="nav_link sublink" data-page="Page 22">Page 22</a>
+             <a href="#" class="nav_link sublink" data-page="Page 22">Page 22</a>
+            </ul>-->
+          </li>
+          <!-- end -->
+
+          <!-- duplicate this li tag if you want to add or remove  navlink with submenu -->
+          <!-- start -->
           <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/2c7737ffc9d4ec190b20?experience=power-bi"
-              class="nav_link submenu_item"
-            >
-              <span class="navlink_icon"><i class="bx bx-grid-alt"></i></span>
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-grid-alt"></i>
+              </span>
               <span class="navlink">Overview</span>
-            </a>
-          </li>
-        </ul>
+              <!-- <i class="bx bx-chevron-right arrow-left"></i> -->
+            </div>
 
-        <!-- Main Navigation -->
+           <!-- <ul class="menu_items submenu">
+              <a href="#" class="nav_link sublink" data-page="Page 22">General Statistics</a>
+            </ul> -->
+          </li>
+          <!-- end -->
+        </ul>
+<!------------- Navigation ---------------->
         <ul class="menu_items">
           <div class="menu_title menu_editor"></div>
+          <!-- duplicate these li tag if you want to add or remove navlink only -->
+          <!-- Start -->
+  <!-- • Table of Contents -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Table of Contents</span>
+    </a>
+  </li>
 
-          <!-- • Table of Contents -->
+  <!-- • Welcome Message -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Welcome Message</span>
+    </a>
+  </li>
+          
+  <!-- • Page 1 – Medical Health -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 1 – Medical Health</span>
+    </a>
+  </li>
+
+  <!-- • Page 2 – Medical Health Recommendations -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 2 – Medical Health Recommendations</span>
+    </a>
+  </li>
+
+  <!-- • Page 3 – Eating Habits -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 3 – Eating Habits</span>
+    </a>
+  </li>
+
+  <!-- • Page 4 – Eating Habits -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 4 – Eating Habits</span>
+    </a>
+  </li>
+
+  <!-- • Page 5 – Eating Habits Recommendation -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 5 – Eating Habits Recommendation</span>
+    </a>
+  </li>
+
+  <!-- • Page 6 – Physical Activity -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 6 – Physical Activity</span>
+    </a>
+  </li>
+
+  <!-- • Page 7 – Physical Activity Recommendation -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 7 – Physical Activity Recommendation</span>
+    </a>
+  </li>
+
+  <!-- • Page 8 – Smoking -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 8 – Smoking</span>
+    </a>
+  </li>
+
+  <!-- • Page 9 – Smoking Recommendation -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 9 – Smoking Recommendation</span>
+    </a>
+  </li>
+
+  <!-- • Page 10 – Sleep -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 10 – Sleep</span>
+    </a>
+  </li>
+
+  <!-- • Page 11 – Sleep Recommendation -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 11 – Sleep Recommendation</span>
+    </a>
+  </li>
+
+  <!-- • Page 12 – Mental Health -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 12 – Mental Health</span>
+    </a>
+  </li>
+
+  <!-- • Page 13 – Mental Health Recommendation -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 13 – Mental Health Recommendation</span>
+    </a>
+  </li>
+
+  <!-- • Page 14 – Worklife Balance Practices -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 14 – Worklife Balance Practices</span>
+    </a>
+  </li>
+
+  <!-- • Page 15 – Worklife Balance Practices Recommendation -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 15 – Worklife Balance Practices Recommendation</span>
+    </a>
+  </li>
+
+  <!-- • Page 16 – Finances -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 16 – Finances</span>
+    </a>
+  </li>
+
+  <!-- • Page 17 – Finances Recommendation -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 17 – Finances Recommendation</span>
+    </a>
+  </li>
+
+  <!-- • Page 18 – Organizational Practices -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 18 – Organizational Practices</span>
+    </a>
+  </li>
+
+  <!-- • Page 19 – Organizational Practices Recommendation -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 19 – Organizational Practices Recommendation</span>
+    </a>
+  </li>
+
+  <!-- • Page 20 – Work Environment -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 20 – Work Environment</span>
+    </a>
+  </li>
+
+  <!-- • Page 21 – Work Environment Recommendations -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 21 – Work Environment Recommendations</span>
+    </a>
+  </li>
+
+  <!-- • Page 22 – Family Situation -->
+  <li class="item">
+    <a href="#" class="nav_link">
+      <span class="navlink_icon">
+        <i class="bx bx-layer"></i>
+      </span>
+      <span class="navlink">Page 22 – Family Situation</span>
+    </a>
+  </li>
+</ul>       
+<!-- ===== Setting Section ===== -->        
+        <!-- <ul class="menu_items">
+          <div class="menu_title menu_setting"></div>
           <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/2ffdc4e6720d0a176eff?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Table of Contents</span>
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-flag"></i>
+              </span>
+              <span class="navlink">Notice board</span>
             </a>
           </li>
-
-          <!-- • Welcome Message -->
           <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/b81f071c8a42a3e1842d?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Welcome Message</span>
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-medal"></i>
+              </span>
+              <span class="navlink">Award</span>
             </a>
           </li>
-
-          <!-- • Page 1 – Medical Health -->
           <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/f003df1e064275042a36?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 1 – Medical Health</span>
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-cog"></i>
+              </span>
+              <span class="navlink">Setting</span>
             </a>
           </li>
-
-          <!-- • Page 2 – Medical Health Recommendations -->
           <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/33b65f13a07665b545e8?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 2 – Medical Health Recommendations</span>
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-layer"></i>
+              </span>
+              <span class="navlink">Features</span>
             </a>
           </li>
+        </ul> -->
 
-          <!-- • Page 3 – Eating Habits -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/693a2dc220323ec05b8c?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 3 – Eating Habits</span>
-            </a>
-          </li>
-
-          <!-- • Page 4 – Eating Habits -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/0b4eb43c823a67a642dd?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 4 – Eating Habits</span>
-            </a>
-          </li>
-
-          <!-- • Page 5 – Eating Habits Recommendation -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/3fb269448da3b9e0369a?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 5 – Eating Habits Recommendation</span>
-            </a>
-          </li>
-
-          <!-- • Page 6 – Physical Activity -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/d1b2e73023b07d7909a2?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 6 – Physical Activity</span>
-            </a>
-          </li>
-
-          <!-- • Page 7 – Physical Activity Recommendation -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/125ff9a0e62331b90b42?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 7 – Physical Activity Recommendation</span>
-            </a>
-          </li>
-
-          <!-- • Page 8 – Smoking -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/5e30a6d40655a5b49ee9?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 8 – Smoking</span>
-            </a>
-          </li>
-
-          <!-- • Page 9 – Smoking Recommendation -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/255340cf45c11945c9a8?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 9 – Smoking Recommendation</span>
-            </a>
-          </li>
-
-          <!-- • Page 10 – Sleep -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/842151d0629d680edeb4?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 10 – Sleep</span>
-            </a>
-          </li>
-
-          <!-- • Page 11 – Sleep Recommendation -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/1cf88739c29c29056c0c?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 11 – Sleep Recommendation</span>
-            </a>
-          </li>
-
-          <!-- • Page 12 – Mental Health -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/2b15545cac0b0e46c9d3?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 12 – Mental Health</span>
-            </a>
-          </li>
-
-          <!-- • Page 13 – Mental Health Recommendation -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/97f5a38bb90d6778a852?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 13 – Mental Health Recommendation</span>
-            </a>
-          </li>
-
-          <!-- • Page 14 – Worklife Balance Practices -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/0768a1b0e803b1858eb7?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 14 – Worklife Balance Practices</span>
-            </a>
-          </li>
-
-          <!-- • Page 15 – Worklife Balance Practices Recommendation -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/70e3147566243c213938?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 15 – Worklife Balance Practices Recommendation</span>
-            </a>
-          </li>
-
-          <!-- • Page 16 – Finances -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/2b4798c57d9b1b7d378d?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 16 – Finances</span>
-            </a>
-          </li>
-
-          <!-- • Page 17 – Finances Recommendation -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/e9f23c614ade47c383b1?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
-              <span class="navlink">Page 17 – Finances Recommendation</span>
-            </a>
-          </li>
-
-          <!-- • Page 18 – Organizational Practices -->
-          <li class="item">
-            <a
-              href="https://app.powerbi.com/groups/me/reports/d70838e4-d07f-448d-94da-2fec6227ff71/06b9506072b49d8eba30?experience=power-bi"
-              class="nav_link"
-            >
-              <span class="navlink_icon"><
+        <!-- Sidebar Open / Close -->
+        <div class="bottom_content">
+          <div class="bottom expand_sidebar">
+            <span> Expand</span>
+            <i class='bx bx-log-in' ></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+            <span> Collapse</span>
+            <i class='bx bx-log-out'></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
